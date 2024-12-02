@@ -7,6 +7,7 @@ import winsound
 from colorama import Fore, Back, Style
 from passwords import *
 
+
 def LOGO():
     print('---')
     print(f"{Fore.LIGHTBLUE_EX}  ________                                                        ")
@@ -22,6 +23,7 @@ def story():
     print("Нажмите Enter для продолжения: ")
     ans = input()
     return
+
 
 def QUESTION():
     while True:

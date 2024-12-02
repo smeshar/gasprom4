@@ -4,6 +4,7 @@ from colorama import Fore, Back, Style
 import functions
 import time
 
+
 class Conn():
     def __init__(self):
         self.hostname = functions.hostname
@@ -13,8 +14,9 @@ class Conn():
         self.username = functions.username
 
     def connect(self):
-        self.connection = pymysql.connect(host=self.hostname, database=self.database, user=self.username, password=self.password,
-                                                  port=self.port)
+        self.connection = pymysql.connect(host=self.hostname, database=self.database, user=self.username,
+                                          password=self.password,
+                                          port=self.port)
         self.cursor = self.connection.cursor()
 
     def close(self):
@@ -49,7 +51,6 @@ class Conn():
             return []
 
         return rows[0]
-
 
     def register(self, name, password, balance, player_stocks):
         self.connect()
@@ -142,7 +143,7 @@ class Conn():
         rows = self.cursor.fetchall()
 
         if len(rows) == 0:
-            return[" Пока ничего нет"]
+            return [" Пока ничего нет"]
 
         l = []
         for row in rows:
