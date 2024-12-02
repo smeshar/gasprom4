@@ -13,3 +13,4 @@ Gasprom Game uses **MySQL**, that is launched on my PC, because I don't have eno
 # Ideas
 - Create sports betting game called "**MuhamBET**"
 - Create Android version of Gasprom Game
+- Chart shows only 20 last price
