@@ -9,3 +9,7 @@ It is console Win64 (I didn't test it on Win32) game, where you can trade virtua
 
 # Why RadminVPN?
 Gasprom Game uses **MySQL**, that is launched on my PC, because I don't have enough money to buy SQL server. I recommend you to use RadminVPN, because it makes all people connected in LAN network, so game can connect to my **MySQL server**.
+
+# Ideas
+- Create sports betting game called "**MuhamBET**"
+- Create Android version of Gasprom Game
