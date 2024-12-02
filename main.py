@@ -9,6 +9,7 @@ import os
 import sys
 from key_generator.key_generator import generate
 
+
 def main():
     just_fix_windows_console()
 
@@ -26,7 +27,8 @@ def main():
     LOGO()
 
     while True:
-        print(f""" Чтобы играть вам нужно {Fore.LIGHTRED_EX}зарегистрироваться{Fore.RESET}/{Fore.LIGHTGREEN_EX}войти{Fore.RESET} в аккаунт
+        print(
+            f""" Чтобы играть вам нужно {Fore.LIGHTRED_EX}зарегистрироваться{Fore.RESET}/{Fore.LIGHTGREEN_EX}войти{Fore.RESET} в аккаунт
          {Fore.LIGHTRED_EX}Зарегистрироваться{Fore.RESET} 1
          {Fore.LIGHTGREEN_EX}Войти в существующий аккаунт{Fore.RESET} 2""")
 
@@ -36,7 +38,8 @@ def main():
             print(
                 f' {Fore.LIGHTGREEN_EX}Введите ваш никнейм (может содержать буквы, цифры и специальные символы, максимальная длина 20, аккаунты с непристойными никнеймами будут удалены){Fore.RESET}')
             nick = input()
-            print(f' {Fore.LIGHTBLUE_EX}Введите пароль (может содержать буквы, цифры и специальные символы, максимальная длина 20){Fore.RESET}')
+            print(
+                f' {Fore.LIGHTBLUE_EX}Введите пароль (может содержать буквы, цифры и специальные символы, максимальная длина 20){Fore.RESET}')
             psw = input()
             if conn.register(nick, psw, balance, player_stocks):
                 l = conn.login(nick, psw)
@@ -106,7 +109,8 @@ def main():
 
         # BUY STOCKS
         if query == 1:
-            print(f"--- \n Введите кол-во рублей \n Ваш баланс позволяет купить криптовалюту Газпром на: {balance} рублей\n Чтобы купить криптовалюту на все деньги введите -1 \n---")
+            print(
+                f"--- \n Введите кол-во рублей \n Ваш баланс позволяет купить криптовалюту Газпром на: {balance} рублей\n Чтобы купить криптовалюту на все деньги введите -1 \n---")
             try:
                 inp = float(input())
             except:
@@ -158,7 +162,8 @@ def main():
         # SELL STOCKS
         if query == 2:
             print(f"--- \nВведите кол-во рублей на которые вы хотите продать крипту")
-            print(f"Ваш баланс позволяет продать: {round(player_stocks * stocks_price, 2)} рублей\n Чтобы купить криптовалюту на все деньги введите -1\n---")
+            print(
+                f"Ваш баланс позволяет продать: {round(player_stocks * stocks_price, 2)} рублей\n Чтобы продать криптовалюту на все деньги введите -1\n---")
             try:
                 inp = float(input())
             except Exception as e:
@@ -256,6 +261,7 @@ def main():
         time.sleep(1)
         clear = lambda: os.system('cls')
         clear()
+
 
 try:
     main()

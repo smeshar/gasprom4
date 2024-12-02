@@ -1,5 +1,5 @@
-import mysql.connector
-from mysql.connector import Error
+import pymysql
+# from mysql.connector import Error
 from colorama import Fore, Back, Style
 import functions
 import time
@@ -13,9 +13,9 @@ class Conn():
         self.username = functions.username
 
     def connect(self):
-        self.connection = mysql.connector.connect(host=self.hostname, database=self.database, user=self.username, password=self.password,
+        self.connection = pymysql.connect(host=self.hostname, database=self.database, user=self.username, password=self.password,
                                                   port=self.port)
-        self.cursor = self.connection.cursor(buffered=True)
+        self.cursor = self.connection.cursor()
 
     def close(self):
         self.connection.commit()
@@ -160,7 +160,7 @@ class Conn():
         self.close()
         return l
 
-    def fetch_all(self) -> [list]:
+    def fetch_all(self) -> list:
         query = "SELECT * FROM config"
         self.cursor.execute(query)
 

@@ -8,7 +8,7 @@ from colorama import Fore, Back, Style
 
 hostname = "sql.freedb.tech"
 database = "freedb_smeshar11DB"
-port = "3306"
+port = 3306
 username = "freedb_smeshar"
 password = "aU3f*wAeN$&yVM2"
 
