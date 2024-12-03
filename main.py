@@ -23,14 +23,25 @@ def main():
     prices = []
     conn = connection.Conn()
     name = ""
+    version = "2.1.4"
 
     LOGO()
+
+    print(f""" Версия игры: {version}\n---""")
+
+    last_version = conn.get_version()
+    if version != last_version:
+        print("Ваша версия игры устарела")
+        print(f"Последняя версия игры: {last_version}")
+        print("Пожалуйста скачайте последний релиз игры по ссылке https://github.com/smeshar/gasprom4/releases/")
+        a = input()
+        return
 
     while True:
         print(
             f""" Чтобы играть вам нужно {Fore.LIGHTRED_EX}зарегистрироваться{Fore.RESET}/{Fore.LIGHTGREEN_EX}войти{Fore.RESET} в аккаунт
-         {Fore.LIGHTRED_EX}Зарегистрироваться{Fore.RESET} 1
-         {Fore.LIGHTGREEN_EX}Войти в существующий аккаунт{Fore.RESET} 2""")
+{Fore.LIGHTRED_EX} Зарегистрироваться{Fore.RESET} 1
+{Fore.LIGHTGREEN_EX} Войти в существующий аккаунт{Fore.RESET} 2""")
 
         inp = int(input())
         if inp == 1:
