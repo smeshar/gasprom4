@@ -7,7 +7,7 @@
 - Скачайте [RadminVPN](https://download.radmin-vpn.com/download/files/Radmin_VPN_1.4.4642.1.exe).
 - Зайдите в **RadminVPN -> Сеть -> Присоединиться к сети**
 - Имя сети: **gaspromgame**
-- Паорль: **123456**
+- Пароль: **123456**
 - Зайдите в папку с игрой
 - Запустите **main.exe**
 
