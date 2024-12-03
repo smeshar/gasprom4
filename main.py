@@ -263,11 +263,11 @@ def main():
                 conn.register_key(str(key))
                 print(f" Ваш ключ к игре: {key}")
                 print(" Ключ действует только один раз")
-                break
 
-            print(" Нажмите любую клавишу для продолжения")
-            a = input()
-            time.sleep(0.5)
+                print(" Нажмите любую клавишу для продолжения")
+                a = input()
+                time.sleep(0.5)
+                break
 
         time.sleep(1)
         clear = lambda: os.system('cls')
