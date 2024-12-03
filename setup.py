@@ -9,7 +9,7 @@ build_exe_options = {
 
 setup(
     name="Gasprom",
-    version="2.1",
+    version="2.1.4",
     description="Gasprom crypto game",
     options={"build_exe": build_exe_options},
     executables=[Executable("main.py")]
