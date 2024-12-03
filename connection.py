@@ -1,17 +1,17 @@
 import pymysql
 # from mysql.connector import Error
 from colorama import Fore, Back, Style
-import functions
+import passwords
 import time
 
 
 class Conn():
     def __init__(self):
-        self.hostname = functions.hostname
-        self.database = functions.database
-        self.password = functions.password
-        self.port = functions.port
-        self.username = functions.username
+        self.hostname = passwords.hostname
+        self.database = passwords.database
+        self.password = passwords.password
+        self.port = passwords.port
+        self.username = passwords.username
 
     def connect(self):
         self.connection = pymysql.connect(host=self.hostname, database=self.database, user=self.username,
@@ -29,10 +29,15 @@ class Conn():
         self.cursor.execute("SELECT * FROM prices")
         rows = self.cursor.fetchall()
 
-        for row in rows:
-            prices.append(row[0])
+        for i in range(max(0, len(rows) - 15), len(rows)):
+            prices.append(rows[i][0])
 
         return prices
+
+    def get_days(self):
+        self.cursor.execute("SELECT * FROM prices")
+        rows = self.cursor.fetchall()
+        return len(rows)
 
     def login(self, name: str, password: str):
         self.connect()
@@ -155,7 +160,7 @@ class Conn():
         self.connect()
 
         l = [self.get_price(), self.get_day(), self.get_prices(), self.time_to_reload(), self.transactions(),
-             self.top_ten()]
+             self.top_ten(), self.get_days()]
         self.update(id, balance, player_stocks)
 
         self.close()

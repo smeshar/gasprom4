@@ -76,7 +76,7 @@ def main():
 
         stocks_price = all[0]
 
-        DRAW_PLOT(all[2])
+        DRAW_PLOT(all[2], all[6])
         # EVERYDAY NEWS
         print(f"--- \n"
               f" Криптовалюта Газпром стоит на данный момент: {Fore.LIGHTBLUE_EX}{round(stocks_price, 2)}{Fore.RESET} \n"

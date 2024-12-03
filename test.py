@@ -1,17 +1,17 @@
-import mysql.connector
+import pymysql
 from mysql.connector import Error
-import functions
+import passwords
 
 
 class Conn():
     def __init__(self):
-        hostname = functions.hostname
-        database = functions.database
-        password = functions.password
-        port = functions.port
-        username = functions.username
+        hostname = passwords.hostname
+        database = passwords.database
+        password = passwords.password
+        port = passwords.port
+        username = passwords.username
 
-        self.connection = mysql.connector.connect(host=hostname, database=database, user=username, password=password,
+        self.connection = pymysql.connect(host=hostname, database=database, user=username, password=password,
                                                   port=port)
         if self.connection.is_connected():
             db_Info = self.connection.get_server_info()
