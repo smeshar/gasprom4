@@ -12,7 +12,6 @@ from key_generator.key_generator import generate
 
 def main():
     just_fix_windows_console()
-
     balance = 5000
     stocks_price = 228.14
     inp = 0
