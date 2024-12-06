@@ -89,10 +89,7 @@ def ENCODE(i):
 
 def NEWACS(lastacs, diff):
     choice = random.randint(1, 10)
-    f = False
     if choice <= 6:
-        f = True
-    if f:
         currentAcs = random.triangular(50, lastacs, 500)
     else:
         currentAcs = random.triangular(lastacs, 1000, 500)
