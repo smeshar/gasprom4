@@ -188,7 +188,7 @@ class Conn():
         self.connect()
         query = f"select * from version"
         self.cursor.execute(query)
-        current_version = self.cursor.fetchone()[0]
+        current_version = self.cursor.fetchall()[-1][0]
         return current_version
 
 # c = Conn()
