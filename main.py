@@ -115,7 +115,7 @@ def main():
         except:
             print("Неверный ввод")
             time.sleep(1)
-            clear = lambda : os.system('cls')
+            clear = lambda: os.system('cls')
             clear()
             continue
 

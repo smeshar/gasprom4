@@ -12,7 +12,7 @@ class Conn():
         username = passwords.username
 
         self.connection = pymysql.connect(host=hostname, database=database, user=username, password=password,
-                                                  port=port)
+                                          port=port)
         if self.connection.is_connected():
             db_Info = self.connection.get_server_info()
             print("Connected to MySQL Server version ", db_Info)

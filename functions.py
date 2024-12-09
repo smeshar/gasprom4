@@ -98,7 +98,7 @@ def NEWACS(lastacs, diff):
 
 
 def DRAW_PLOT(prices, days):
-    dates = [i for i in range(days-14, days + 1)]
+    dates = [i for i in range(days - 14, days + 1)]
     plt.clear_data()
     plt.theme("clear")
     plt.scatter(dates, prices, marker="x")
