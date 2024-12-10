@@ -22,7 +22,7 @@ def main():
     prices = []
     conn = connection.Conn()
     name = ""
-    version = "2.1.5"
+    version = "2.1.6"
 
     LOGO()
 
