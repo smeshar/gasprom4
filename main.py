@@ -95,7 +95,8 @@ def main():
         print(
             f" Ваш баланс: {Fore.GREEN}{round(balance, 2)}{Fore.RESET}\n"
             f" Ваш баланс на криптокошельке: {Fore.BLUE}{round(player_stocks * stocks_price, 2)}{Fore.RESET}\n"
-            f" Осталось секунд до обновления курса криптовалюты: {Fore.YELLOW}{all[3]}{Fore.RESET}")
+            f" Осталось секунд до обновления курса криптовалюты: {Fore.YELLOW}{all[3]}{Fore.RESET}\n"
+            f" Текущий пинг: {all[7]}")
 
         print(f"""---\n Текущие транзакции:""")
         for transactions in all[4]: print(transactions)

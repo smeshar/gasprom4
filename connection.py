@@ -123,7 +123,6 @@ class Conn():
         query = f"UPDATE users SET balance = {balance}, player_stocks = {player_stocks} where id = {id}"
         self.cursor.execute(query)
         self.connection.commit()
-        return
 
     def get_day(self):
         query = f"SELECT day FROM config"
@@ -156,6 +155,20 @@ class Conn():
             l.append(f" {row[0]} {x} крипты на {round(row[2] * stocks_price, 2)}руб.")
         return l
 
+    def get_ping(self):
+        curtime = time.time()
+        self.connect()
+        ans = time.time() - curtime
+        self.close()
+
+        ans = round(ans * 1000)
+
+        if ans < 100:
+            return Fore.LIGHTGREEN_EX + str(ans) + Fore.RESET
+        if ans > 300:
+            return Fore.LIGHTRED_EX + str(ans) + Fore.RESET
+        return Fore.LIGHTYELLOW_EX + str(ans) + Fore.RESET
+
     def get_all(self, id, balance, player_stocks) -> list:
         self.connect()
 
@@ -164,6 +177,7 @@ class Conn():
         self.update(id, balance, player_stocks)
 
         self.close()
+        l.append(self.get_ping())
         return l
 
     def fetch_all(self) -> list:
